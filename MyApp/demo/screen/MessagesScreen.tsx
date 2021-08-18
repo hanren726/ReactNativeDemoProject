@@ -1,4 +1,4 @@
-import {Button, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import React from 'react';
 
 /**
@@ -6,11 +6,11 @@ import React from 'react';
  * @date 2021/8/18 5:35 下午
  * @copyright BlackLake.cn
  */
-const FeedScreen = ({navigation}) => {
+const MessagesScreen = ({navigation}) => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Feed Screen</Text>
+      <Text>Messages Screen</Text>
     </View>
   );
 };
-export default FeedScreen;
+export default MessagesScreen;

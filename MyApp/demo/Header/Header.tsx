@@ -22,6 +22,7 @@ interface HeaderProps {
   leftComponent?: React.ReactNode;
   centerComponent?: React.ReactNode;
   rightComponent?: React.ReactNode;
+  onLeftPress: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
@@ -32,6 +33,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     leftComponent,
     centerComponent,
     rightComponent,
+    onLeftPress,
   } = props;
   return (
     <>
@@ -50,7 +52,11 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             marginTop: translucent ? StatusBar.currentHeight : 0,
           }}>
           <View style={styles.container}>
-            {leftComponent || <Text style={{width: 30}}>{'<'}</Text>}
+            {leftComponent || (
+              <Text style={{width: 30}} onPress={onLeftPress}>
+                {'<'}
+              </Text>
+            )}
             {centerComponent || (
               <View
                 style={{

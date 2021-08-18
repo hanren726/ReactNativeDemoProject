@@ -10,13 +10,31 @@
 
 import React from 'react';
 
-import {Header} from './Header/Header';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from './screen/HomeScreen';
+import MainStack from './screen/MainStack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <>
-      <Header />
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="HOME"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={MainStack}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

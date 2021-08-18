@@ -1,7 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import FeedScreen from './FeedScreen';
 import FeedDetailScreen from './FeedDetailScreen';
 import React from 'react';
+import DetailScreen from './DetailScreen';
 /**
  * @author jiaminglei@blacklake.cn
  * @date 2021/8/18 5:50 下午
@@ -10,13 +10,19 @@ import React from 'react';
 
 const Stack = createNativeStackNavigator();
 
-const FeedStack = ({navigation}) => {
+const MainStack = ({navigation}) => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Feed" component={FeedScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        headerStyle: {
+          backgroundColor: '#f4511e',
+        },
+      }}>
       <Stack.Screen name="FeedDetail" component={FeedDetailScreen} />
+      <Stack.Screen name="SubDetail" component={DetailScreen} />
     </Stack.Navigator>
   );
 };
 
-export default FeedStack;
+export default MainStack;

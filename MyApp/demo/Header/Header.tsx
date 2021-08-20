@@ -9,12 +9,6 @@ import {
 import React from 'react';
 import {StatusBarHeight} from '../util';
 
-/**
- * @author jiaminglei@blacklake.cn
- * @date 2021/7/2 3:32 下午
- * @copyright BlackLake.cn
- */
-
 interface HeaderProps {
   translucent?: boolean;
   backgroundColor?: string;

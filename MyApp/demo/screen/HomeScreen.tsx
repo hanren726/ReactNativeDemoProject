@@ -3,11 +3,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FeedScreen from './FeedScreen';
 import MessagesScreen from './MessagesScreen';
 
-/**
- * @author jiaminglei@blacklake.cn
- * @date 2021/8/18 5:34 下午
- * @copyright BlackLake.cn
- */
+export type MainStackParamsList = {
+  FeedStack: undefined;
+  Messages: undefined;
+};
+
 const Tab = createBottomTabNavigator();
 const HomeScreen = ({navigation}) => {
   return (
